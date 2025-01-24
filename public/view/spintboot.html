@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT API Integration</title>
+    <link rel="stylesheet" href="../index.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gojs/2.2.9/go.js"></script>
+    <script src="../script.js"></script>
+    <!-- Asegúrate de que se cargue antes del script del botón -->
+</head>
+
+<body>
+    <div class="container">
+        <h1>Integración con ChatGPT</h1>
+        <button id="enviarDiagrama">Enviar Diagrama a ChatGPT</button>
+        <h3>Respuesta:</h3>
+        <div id="respuestaGPT"></div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#enviarDiagrama').click(function() {
+                if (typeof myDiagram === 'undefined') {
+                    $('#respuestaGPT').text('Diagrama no definido.');
+                    console.log('myDiagram no está definido.');
+                    return;
+                }
+
+                // Obtén el objeto JSON del diagrama
+                const diagramData = myDiagram.model.toJson();
+                console.log('Datos del diagrama:', diagramData);
+
+                $.ajax({
+                    url: 'http://localhost:3000/api/chatgpt',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        prompt: diagramData // Enviamos el JSON del diagrama como prompt
+                    }),
+                    success: function(response) {
+                        $('#respuestaGPT').text(response.response);
+                    },
+                    error: function() {
+                        $('#respuestaGPT').text('Error al generar código');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

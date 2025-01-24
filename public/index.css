@@ -1,0 +1,355 @@
+/* ---------- MODALES ---------- */
+
+
+/* .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+} */
+
+.modal {
+    display: none;
+    /* Inicialmente oculto */
+    position: fixed;
+    z-index: 1000;
+    /* Asegúrate de que no bloquee el contenido */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+    /* Permite que el contenido largo sea desplazable */
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 10% auto;
+    padding: 40px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-contentCodigo {
+    background-color: #ffffff;
+    margin: 10% auto;
+    padding: 40px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 80%;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: #666;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    float: right;
+}
+
+.close:hover {
+    color: #ff0000;
+}
+
+
+/* ---------- BARRA LATERAL ---------- */
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #343a40;
+    padding: 10px;
+    color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.sidebar-brand {
+    font-weight: bold;
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li {
+    position: relative;
+}
+
+.sidebar-menu-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-menu-link:hover {
+    background-color: #495057;
+    border-radius: 5px;
+}
+
+.sidebar-message {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    color: #fff;
+    font-style: italic;
+}
+
+
+/* ---------- DROPDOWN MENU ---------- */
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border-radius: 5px;
+    top: 35px;
+    left: 0;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    padding: 10px;
+}
+
+.dropdown-menu li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f1f1f1;
+}
+
+
+/* ---------- CURSOR DEL INVITADO ---------- */
+
+#guestCursorDiv {
+    position: fixed;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.guest-cursor {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.guest-name {
+    position: absolute;
+    top: -30px;
+    left: 0;
+    color: #fff;
+    background-color: #333;
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+
+/* ---------- DIAGRAMA ---------- */
+
+
+/* #myDiagramDiv {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  height: 600px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+} */
+
+
+/* ---------- BOTONES ---------- */
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#addNode {
+    background-color: #28a745;
+}
+
+#addNode:hover {
+    background-color: #218838;
+}
+
+#copyButton {
+    background-color: #ffc107;
+}
+
+#copyButton:hover {
+    background-color: #e0a800;
+}
+
+
+/* ---------- FORMULARIOS DE LOGIN Y REGISTRO ---------- */
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form button {
+    background-color: #28a745;
+    color: #fff;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+
+p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+
+/* ---------- LISTA DE INVITADOS ---------- */
+
+#guestList {
+    list-style: none;
+    padding: 0;
+}
+
+#guestList li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+}
+
+#guestList li:last-child {
+    border-bottom: none;
+}
+
+
+/* ---------- MODAL PARA RESPUESTA DE IA ---------- */
+
+#codigoModal {
+    display: none;
+    /* Oculto por defecto */
+    position: fixed;
+    /* Fijo en la pantalla */
+    z-index: 1000;
+    /* Por encima del contenido */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Ancho completo */
+    height: 100%;
+    /* Alto completo */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fondo semitransparente */
+    overflow: auto;
+    /* Añadir barras de desplazamiento si es necesario */
+}
+
+#codigoModal .modal-content {
+    background-color: #fff;
+    margin: 2% auto;
+    /* Mantén centrado el modal */
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    /* Aumenta el ancho a 90% del viewport */
+    max-width: 1800px;
+    /* Ancho máximo del modal para pantallas grandes */
+    height: 90%;
+    /* Mantén la altura */
+    overflow: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+#codigoModal .close {
+    color: #666;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    float: right;
+}
+
+#codigoModal .close:hover {
+    color: #ff0000;
+}
+
+#codigoModal pre {
+    white-space: pre-wrap;
+    /* Ajusta el contenido con formato */
+    word-wrap: break-word;
+    /* Rompe las palabras largas si es necesario */
+}
+
+#codigoGenerado {
+    width: 100%;
+    /* Ocupa el 100% del modal */
+    height: 85%;
+    /* Aumenta el área del contenido a 85% */
+    max-width: 100%;
+    /* Evita que el contenido se desborde */
+    max-height: 90%;
+    user-select: text;
+    cursor: text;
+}
